@@ -3,14 +3,15 @@
 
 int main()
 {
-	CG7112AAC g7112aac(8000, 2, AV_SAMPLE_FMT_S16, AV_CODEC_ID_PCM_MULAW);
+	// CG7112AAC g7112aac(8000, 1, AV_SAMPLE_FMT_S16, AV_CODEC_ID_PCM_ALAW);
+	CG7112AAC g7112aac(8000, 1, AV_SAMPLE_FMT_S16, AV_CODEC_ID_PCM_MULAW);
 
 	
 	FILE *infile;
-	fopen_s(&infile, "8k_2_16.g711u", "rb");
+	fopen_s(&infile, "8k_1_16.g711u", "rb");
 
 	FILE *outfile;
-	fopen_s(&outfile, "8k_2_16.aac", "wb");
+	fopen_s(&outfile, "8k_1_16.aac", "wb");
 
 	uint8_t frame_buffer[1024] = { 0 };
 	uint8_t *aac_buffer = nullptr;
